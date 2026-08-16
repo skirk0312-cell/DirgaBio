@@ -1,0 +1,645 @@
+@font-face {
+    font-family: "Pixel";
+    src: url("assets/fonts/04B_30__.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("assets/fonts/Minecraft.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "EmojiFont";
+    src: url("assets/fonts/EmojiFont.ttf") format("truetype");
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+  --background: #f0f4f8;
+  --card: #d9e2ec;
+  --blue: #627d98;
+  --blue-dark: #486581;
+  --brown: #102a43;
+  --brown-light: #243b53;
+}
+
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--brown);
+    font-family: "Minecraft", monospace;
+    display: flex;
+    justify-content: center;
+    padding: 30px 16px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.bio-container,
+.container {
+    width: 100%;
+    max-width: 520px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.banner {
+    width: 100%;
+    height: 190px;
+    display: block;
+    object-fit: cover;
+    border: 3px solid var(--brown);
+    background: var(--orange);
+}
+
+.profile {
+    width: 105px;
+    height: 105px;
+    display: block;
+    object-fit: cover;
+    margin: -52px auto 0;
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    border: 4px solid var(--background);
+    outline: 3px solid var(--brown);
+}
+
+.hero h1 {
+    margin-top: 18px;
+    font-family: "Pixel", monospace;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--brown);
+}
+
+.username {
+    margin-top: 7px;
+    font-size: 14px;
+    color: var(--brown-light);
+    opacity: 0.8;
+}
+
+.quote {
+    margin-top: 15px;
+    font-family: "Pixel", monospace;
+    font-size: 11px;
+    color: var(--orange-dark);
+}
+
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.socials a {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.socials img {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    object-fit: contain;
+    display: block;
+    filter: sepia(1) saturate(2) hue-rotate(330deg);
+}
+
+.socials a:hover {
+    transform: translateY(-3px) scale(1.1);
+    opacity: 0.7;
+}
+
+
+/* =========================
+   BUSINESS & SUPPORT
+========================= */
+
+.business-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+.business-button,
+.support-button {
+    position: relative;
+    width: 100%;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--brown);
+    background: var(--card);
+    border: 3px solid var(--brown);
+    box-shadow: 5px 5px 0 var(--brown);
+    font-family: "Pixel", monospace;
+    font-size: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+
+/* =========================
+   EMOJIFONT ICON
+========================= */
+
+.business-icon,
+.support-icon {
+    display: inline-block;
+    font-family: "EmojiFont";
+    font-size: 22px;
+    line-height: 1;
+    color: var(--orange-dark);
+}
+
+
+/* =========================
+   BUTTON TEXT
+========================= */
+
+.business-hover,
+.support-hover {
+    display: none;
+}
+
+.business-button:hover .business-normal,
+.support-button:hover .support-normal {
+    display: none;
+}
+
+.business-button:hover .business-hover,
+.support-button:hover .support-hover {
+    display: inline;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.business-button:hover,
+.support-button:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--brown);
+    background: #ffd4aa;
+}
+
+
+/* =========================
+   IDLE ANIMATION
+========================= */
+
+.business-button {
+    animation: businessFloat 3s ease-in-out infinite;
+}
+
+.support-button {
+    animation: supportFloat 3.4s ease-in-out infinite;
+}
+
+.business-icon {
+    animation: iconFloat 1.8s ease-in-out infinite;
+}
+
+.support-icon {
+    animation: iconFloat 2s ease-in-out infinite;
+}
+
+@keyframes businessFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes supportFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    30% { transform: translateY(-3px) rotate(-5deg); }
+    60% { transform: translateY(-5px) rotate(5deg); }
+}
+
+
+/* =========================
+   ABOUT ME
+========================= */
+
+.about {
+    margin-top: 35px;
+    padding: 24px;
+    background: var(--card);
+    border: 2px solid var(--brown);
+    border-radius: 0;
+    text-align: left;
+}
+
+.about h2,
+.section-title {
+    margin-bottom: 20px;
+    font-family: "Pixel", monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--brown);
+    text-align: center;
+}
+
+.about p {
+    margin-bottom: 10px;
+    font-family: "Minecraft", monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--brown-light);
+}
+
+.about strong {
+    color: var(--orange-dark);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 35px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.7;
+    color: var(--brown-light);
+    opacity: 0.65;
+}
+
+
+/* =========================
+   EMOJI RAIN BUTTON
+========================= */
+
+.emoji-rain-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.emoji-rain-button {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--brown);
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--brown);
+    box-shadow: 4px 4px 0 var(--brown);
+    cursor: pointer;
+    font-family: "Pixel", monospace;
+    font-size: 20px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.emoji-rain-button:hover {
+    transform: translateY(-3px);
+}
+
+.emoji-rain-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--brown);
+}
+
+.emoji-rain-button span {
+    animation: sparkle 1.8s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+}
+
+
+/* =========================
+   EMOJI RAIN PARTICLES
+========================= */
+
+.emoji-rain-particle {
+    position: fixed;
+    top: -40px;
+    z-index: 9999;
+    pointer-events: none;
+    font-family: "EmojiFont";
+    font-size: 22px;
+    color: var(--orange-dark);
+    animation-name: emojiRain;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes emojiRain {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+
+/* =========================
+   LONG PRESS SECRET & BURST
+========================= */
+
+.mega-emoji-letter {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    pointer-events: none;
+    font-family: "EmojiFont";
+    color: var(--orange-dark);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.mega-letter-particle {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    font-family: "EmojiFont";
+    color: var(--orange-dark);
+    line-height: 1;
+    animation-name: megaBurst;
+    animation-timing-function: cubic-bezier(.2,.8,.3,1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes megaBurst {
+    0% { transform: translate(0, 0) rotate(0deg) scale(0.4); opacity: 0; }
+    12% { opacity: 1; }
+    100% { transform: translate(var(--x), calc(-100vh - 100px)) rotate(var(--rotation)) scale(1); opacity: 0; }
+}
+
+
+/* =========================
+   PIXEL RUN GAME
+========================= */
+
+.pixel-game {
+    width: 100%;
+    margin-top: 35px;
+    padding: 20px;
+    background: var(--card);
+    border: 2px solid var(--brown);
+    text-align: center;
+}
+
+.pixel-game h2 {
+    margin-bottom: 12px;
+    font-family: "Pixel", monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--brown);
+}
+
+.game-score {
+    margin-bottom: 10px;
+    font-family: "Pixel", monospace;
+    font-size: 10px;
+    color: var(--brown-light);
+}
+
+#dinoGame {
+    width: 100%;
+    height: 150px;
+    display: block;
+    background: var(--background);
+    border: 2px solid var(--brown);
+    image-rendering: pixelated;
+    touch-action: none;
+    cursor: pointer;
+}
+
+.game-hint {
+    margin-top: 12px;
+    font-family: "Pixel", monospace;
+    font-size: 8px;
+    color: var(--brown-light);
+    opacity: 0.7;
+}
+
+
+/* =========================
+   CATALOG GRID & CARDS
+========================= */
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.card {
+    background: var(--card);
+    border: 3px solid var(--brown);
+    box-shadow: 4px 4px 0 var(--brown);
+    padding: 12px;
+    text-align: center;
+    border-radius: 0;
+}
+
+.card-image {
+    width: 100%;
+    height: 130px;
+    border: 2px solid var(--brown);
+    background: var(--background);
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    margin-top: 12px;
+}
+
+.card-content h3 {
+    font-family: "Pixel", monospace;
+    font-size: 13px;
+    color: var(--brown);
+    margin-bottom: 6px;
+}
+
+.card-content .price {
+    font-family: "Minecraft", monospace;
+    font-size: 12px;
+    color: var(--orange-dark);
+    margin-bottom: 12px;
+}
+
+.btn-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    background: var(--orange);
+    color: var(--brown);
+    border: 2px solid var(--brown);
+    box-shadow: 3px 3px 0 var(--brown);
+    font-family: "Pixel", monospace;
+    font-size: 10px;
+    text-decoration: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.btn-order:hover {
+    background: #ffd4aa;
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--brown);
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    .banner {
+        height: 155px;
+    }
+
+    .profile {
+        width: 90px;
+        height: 90px;
+        margin-top: -45px;
+    }
+
+    .hero h1 {
+        font-size: 21px;
+    }
+
+    .socials {
+        gap: 20px;
+    }
+
+    .socials a {
+        width: 25px;
+        height: 25px;
+    }
+
+    .socials img {
+        width: 18px;
+        height: 18px;
+        max-width: 18px;
+        max-height: 18px;
+    }
+
+    .about {
+        padding: 20px;
+    }
+
+    .business-button,
+    .support-button {
+        min-height: 55px;
+    }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .business-button,
+    .support-button,
+    .business-icon,
+    .support-icon {
+        animation: none;
+    }
+
+    .socials a,
+    .business-button,
+    .support-button {
+        transition: none;
+    }
+}
+
+
+/* =========================
+   TOUCH INTERACTION
+========================= */
+
+.business-button.touched .business-normal,
+.support-button.touched .support-normal {
+    display: none;
+}
+
+.business-button.touched .business-hover,
+.support-button.touched .support-hover {
+    display: inline;
+}
