@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/Ddosdirgaroom",
+      "destination": "/Ddosdirgaroom/index.html"
+    }
+  ]
+}

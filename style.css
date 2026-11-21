@@ -13,11 +13,6 @@
     src: url("assets/fonts/EmojiFont.ttf") format("truetype");
 }
 
-
-/* =========================
-   COLORS
-========================= */
-
 :root {
   --background: #f0f4f8;
   --card: #d9e2ec;
@@ -26,12 +21,6 @@
   --brown: #102a43;
   --brown-light: #243b53;
 }
-
-
-
-/* =========================
-   RESET
-========================= */
 
 * {
     margin: 0;
@@ -53,21 +42,11 @@ body {
     padding: 30px 16px;
 }
 
-
-/* =========================
-   MAIN CONTAINER
-========================= */
-
 .bio-container,
 .container {
     width: 100%;
     max-width: 520px;
 }
-
-
-/* =========================
-   HERO
-========================= */
 
 .hero {
     position: relative;
@@ -118,11 +97,6 @@ body {
     color: var(--orange-dark);
 }
 
-
-/* =========================
-   SOCIAL ICONS
-========================= */
-
 .socials {
     display: flex;
     justify-content: center;
@@ -156,11 +130,6 @@ body {
     opacity: 0.7;
 }
 
-
-/* =========================
-   BUSINESS & SUPPORT
-========================= */
-
 .business-buttons {
     width: 100%;
     display: flex;
@@ -168,11 +137,6 @@ body {
     gap: 18px;
     margin-top: 28px;
 }
-
-
-/* =========================
-   BUTTON BASE
-========================= */
 
 .business-button,
 .support-button {
@@ -193,11 +157,6 @@ body {
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
-
-/* =========================
-   EMOJIFONT ICON
-========================= */
-
 .business-icon,
 .support-icon {
     display: inline-block;
@@ -206,11 +165,6 @@ body {
     line-height: 1;
     color: var(--orange-dark);
 }
-
-
-/* =========================
-   BUTTON TEXT
-========================= */
 
 .business-hover,
 .support-hover {
@@ -227,22 +181,12 @@ body {
     display: inline;
 }
 
-
-/* =========================
-   BUTTON HOVER
-========================= */
-
 .business-button:hover,
 .support-button:hover {
     transform: translate(3px, 3px);
     box-shadow: 2px 2px 0 var(--brown);
     background: #ffd4aa;
 }
-
-
-/* =========================
-   IDLE ANIMATION
-========================= */
 
 .business-button {
     animation: businessFloat 3s ease-in-out infinite;
@@ -276,11 +220,6 @@ body {
     60% { transform: translateY(-5px) rotate(5deg); }
 }
 
-
-/* =========================
-   ABOUT ME
-========================= */
-
 .about {
     margin-top: 35px;
     padding: 24px;
@@ -312,11 +251,6 @@ body {
     color: var(--orange-dark);
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     margin-top: 35px;
     padding-bottom: 10px;
@@ -326,11 +260,6 @@ footer {
     color: var(--brown-light);
     opacity: 0.65;
 }
-
-
-/* =========================
-   EMOJI RAIN BUTTON
-========================= */
 
 .emoji-rain-section {
     display: flex;
@@ -373,11 +302,6 @@ footer {
     50% { transform: rotate(180deg) scale(1.2); }
 }
 
-
-/* =========================
-   EMOJI RAIN PARTICLES
-========================= */
-
 .emoji-rain-particle {
     position: fixed;
     top: -40px;
@@ -397,11 +321,6 @@ footer {
     90% { opacity: 1; }
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
-
-
-/* =========================
-   LONG PRESS SECRET & BURST
-========================= */
 
 .mega-emoji-letter {
     position: fixed;
@@ -433,11 +352,6 @@ footer {
     12% { opacity: 1; }
     100% { transform: translate(var(--x), calc(-100vh - 100px)) rotate(var(--rotation)) scale(1); opacity: 0; }
 }
-
-
-/* =========================
-   PIXEL RUN GAME
-========================= */
 
 .pixel-game {
     width: 100%;
@@ -481,11 +395,6 @@ footer {
     color: var(--brown-light);
     opacity: 0.7;
 }
-
-
-/* =========================
-   CATALOG GRID & CARDS
-========================= */
 
 .catalog-grid {
     display: grid;
@@ -559,11 +468,6 @@ footer {
     box-shadow: 1px 1px 0 var(--brown);
 }
 
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
 @media (max-width: 480px) {
     body {
         padding: 18px 12px;
@@ -609,11 +513,6 @@ footer {
     }
 }
 
-
-/* =========================
-   REDUCE MOTION
-========================= */
-
 @media (prefers-reduced-motion: reduce) {
     .business-button,
     .support-button,
@@ -628,11 +527,6 @@ footer {
         transition: none;
     }
 }
-
-
-/* =========================
-   TOUCH INTERACTION
-========================= */
 
 .business-button.touched .business-normal,
 .support-button.touched .support-normal {
