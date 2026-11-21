@@ -643,3 +643,5 @@ footer {
 .support-button.touched .support-hover {
     display: inline;
 }
+
+[hidden]{display:none!important}

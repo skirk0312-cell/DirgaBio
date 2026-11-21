@@ -671,6 +671,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         resizeGame();
+        document.addEventListener("dirga-game-toggle", () => { if (!canvas.closest(".pixel-game").hidden) resizeGame(); });
 
         window.addEventListener(
             "resize",
@@ -2597,6 +2598,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ===================================================== */
 
         function gameLoop(timestamp) {
+            if (canvas.closest(".pixel-game").hidden) { lastTime=0; requestAnimationFrame(gameLoop); return; }
 
             if (!lastTime) {
                 lastTime =
@@ -2665,6 +2667,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener(
             "keydown",
             (event) => {
+                if (canvas.closest(".pixel-game").hidden) return;
 
                 if (
                     event.code ===
